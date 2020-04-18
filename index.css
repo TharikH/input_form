@@ -21,7 +21,7 @@ form{
 .signup{
     height: 35rem;
     width: 30rem;
-    z-index: 10;
+    z-index: -1;
 }
 .signin{
     height: 30rem;
