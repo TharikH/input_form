@@ -11,33 +11,22 @@ form{
     left:50%;
     position: absolute;
     transform: translate(-50%,-50%);
-    background-color: rgb(18, 177, 18);
-    padding:4rem 2rem 0rem 2rem;
-    border:1rem black solid;
+    background-color: rgb(42, 184, 7);
+    padding:4em 2em 0em 2em;
+    border:1em black solid;
     box-shadow: 2em 2em 2em rgb(7, 92, 7);
     text-align: center;
     align-items: center;
+    transition: all 0.5s ease;
 }
-.signup{
-    height: 35rem;
-    width: 30rem;
-    z-index: -1;
+input{
+    outline: none;
 }
-.signin{
-    height: 30rem;
-    width: 30rem;
-}
-.signin div,.signup div{
-    width:100%;
-    height: 3em;
-    padding:0rem 1.7rem ;
-    align-items: center;
-}
-.signin div i,.signup div i{
-    padding: 0 0.3rem 0 0;
-}
-.signin .user_name,.signin .pass{
-    margin-top: 2rem ;
+/*sign up*/
+#signup{
+    height: 35em;
+    width: 30em;
+    z-index: 1;
 }
 .email,
 .user_name,
@@ -45,8 +34,25 @@ form{
 .conPass{
     display: flex;
     background-color: white;
-    border-radius: 2rem;
-    margin-top: 1rem;
+    border-radius: 2em;
+    margin-top: 1em;
+}
+/*sign in extra added*/
+#signin{
+    height: 30em;
+    width: 30em;
+}
+#signin div,#signup div{
+    width:100%;
+    height: 3em;
+    padding:0em 1.7em ;
+    align-items: center;
+}
+#signin div i,#signup div i{
+    padding: 0 0.3em 0 0;
+}
+#signin .user_name,#signin .pass{
+    margin-top: 2em ;
 }
 #Sname,#Spass,
 #email,
@@ -60,21 +66,21 @@ form{
     height: 100%;
 }
 .button,.text{
-    margin-top: 2rem;
+    margin-top: 2em;
 }
 button{
     background-color:  rgb(28, 236, 28);
-    box-shadow:0.1rem 0.1rem 0.1rem black;
-    border:0.1rem black solid;
-    border-radius: 0.1rem;
+    box-shadow:0.1em 0.1em 0.1em black;
+    border:0.1em black solid;
+    border-radius: 0.1em;
     outline: none;
     cursor: pointer;
-    width:6rem;
-    height:3rem;
+    width:6em;
+    height:3em;
     font-weight: bold;
     color: black;
     font-family: Arial, Helvetica, sans-serif;
-    transition: all 0.5s ;
+    transition: all 1s ease 1s;
 }
 button:hover{
     transform:scale(1.1,1.1);
@@ -87,12 +93,49 @@ p{
 .disNone{
     display: none;
 }
-@keyframes rot{
+.DisNone{
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(50%,-50%);
+}
+.Dis{
+    opacity: 1;
+    pointer-events: all;
+    transform: translate(-50%,-50%);
+}
+.pointer{
+    cursor: pointer;
+}
+@media only screen and (max-width:500px){
+    body{
+        font-size:85%;
+    }
+}
+@media only screen and (max-width:400px){
+    body{
+        font-size:80%;
+    }
+}
+@media only screen and (max-width:370px){
+    form{
+        width: 100%;
+    }
+}
+@keyframes error{
     0%{
         transform: translate(0,0)rotate(0deg);
     }
-    50%{
-        transform: translate(10%,10%)rotate(10deg);
+    20%{
+        transform: translate(1%,-1%)rotate(1deg);
+    }
+    40%{
+        transform: translate(-1%,1%)rotate(-1deg);
+    }
+    60%{
+        transform: translate(1%,-1%)rotate(1deg);
+    }
+    80%{
+        transform: translate(-1%,1%)rotate(-1deg);
     }
     100%{
         transform: translate(0,0)rotate(0deg);
